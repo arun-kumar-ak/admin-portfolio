@@ -12,7 +12,7 @@ app.get("/", (req, res) => {
 app.get("/mail", (req, res) => {
   mailMain()
   .then((res) => {
-      res.send('mail sent', JSON.stringify(res))
+      res.send('mail sent')
   }).catch((err) => {
     console.log(err);
     res.status(400).send('mail not sent')
