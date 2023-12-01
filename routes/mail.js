@@ -5,19 +5,17 @@ const transporter = nodemailer.createTransport({
   port: 465,
   secure: true,
   auth: {
-    type: "OAuth2",
-    clientId: '',
-    clientSecret: '',
+    user: 'mdnassaar4@gmail.com',
+    pass: 'dtdzodybmhzlfjsx'
   },
 });
 
-async function mailMain() {
+async function mailMain(mailID,message) {
   const info = await transporter.sendMail({
-    from: 'arun1812.ak@gmail.com',
-    to: "arun1812.a@gmail.com",
+    from: 'mdnassaar4@gmail.com',
+    to: mailID,
     subject: "Hello ✔",
-    text: "Hello world?",
-    html: "<b>Hello world?</b>",
+    text: message
   });
 
   console.log("Message sent: %s", info.messageId);
