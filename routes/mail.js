@@ -5,20 +5,20 @@ const transporter = nodemailer.createTransport({
   port: 465,
   secure: true,
   auth: {
-    user: 'mdnassaar4@gmail.com',
-    pass: 'dtdzodybmhzlfjsx'
+    user: "mdnassaar4@gmail.com",
+    pass: "dtdzodybmhzlfjsx",
   },
 });
 
-async function mailMain(mailID,message) {
+async function mailMain(mailID, message) {
   const info = await transporter.sendMail({
-    from: 'mdnassaar4@gmail.com',
+    from: "mdnassaar4@gmail.com",
     to: mailID,
     subject: "Hello ✔",
-    text: message
+    text: message,
   });
 
   console.log("Message sent: %s", info.messageId);
 }
 
-module.exports = mailMain
+module.exports = mailMain;
